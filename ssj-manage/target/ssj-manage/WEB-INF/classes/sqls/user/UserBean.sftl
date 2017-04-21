@@ -1,2 +1,0 @@
---queryUserById
-SELECT * FROM t_user WHERE userId=:userId and password=:password

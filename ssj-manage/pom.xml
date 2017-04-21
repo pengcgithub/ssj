@@ -15,6 +15,8 @@
 
     <properties>
         <p6spy.version>2.3</p6spy.version>
+        <spring.data.jpa>1.10.1.RELEASE</spring.data.jpa>
+        <spring.data.jpa.extra>2.0.1.RELEASE</spring.data.jpa.extra>
     </properties>
 
     <dependencies>
@@ -26,7 +28,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>1.10.1.RELEASE</version>
+            <version>${spring.data.jpa}</version>
         </dependency>
         <dependency>
             <groupId>com.querydsl</groupId>
@@ -51,7 +53,7 @@
         <dependency>
             <groupId>com.slyak</groupId>
             <artifactId>spring-data-jpa-extra</artifactId>
-            <version>2.0.1.RELEASE</version>
+            <version>${spring.data.jpa.extra}</version>
         </dependency>
     </dependencies>
 
