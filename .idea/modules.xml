@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ssj.iml" filepath="$PROJECT_DIR$/ssj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssj-common/ssj-common.iml" filepath="$PROJECT_DIR$/ssj-common/ssj-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssj-manage/ssj-manage.iml" filepath="$PROJECT_DIR$/ssj-manage/ssj-manage.iml" />
+    </modules>
+  </component>
+</project>

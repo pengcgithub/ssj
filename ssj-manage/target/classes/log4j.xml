@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration>
+
+	<!-- 标准输入输出 -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="stdout: |%-5p| %m | %d{yyyy-MM-dd HH:mm:ssS} | %l %n" />
+		</layout>
+	</appender>
+
+
+	<!-- 输出到fable.log文件中 -->
+	<appender name="fable" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${catalina.home}/logs/fable.log" />
+		<param name="MaxFileSize" value="10485760" />
+		<param name="MaxBackupIndex" value="1" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="fable: |%-5p| %m | %d{yyyy-MM-dd HH:mm:ssS} | %l %n" />
+		</layout>
+	</appender>
+
+
+
+	<!--Spring 配置 -->
+	<appender name="spring" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${catalina.home}/logs/spring.log" />
+		<param name="MaxFileSize" value="10485760" />
+		<param name="MaxBackupIndex" value="1" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="Spring: |%-5p| %m | %d{yyyy-MM-dd HH:mm:ssS} | %l %n" />
+		</layout>
+	</appender>
+	
+	<!-- spring -->
+	<category name="org.springframework" additivity="true">
+		<priority value="info" />
+		<appender-ref ref="spring" />
+	</category>
+	
+
+	<!-- 配置com.fable包日志输出 -->
+	<category name="com.fable" additivity="true">
+		<priority value="info" />
+		<appender-ref ref="fable" />
+	</category>
+
+
+<!-- 	<root> -->
+<!-- 		<priority value="info" /> -->
+<!-- 		<appender-ref ref="stdout" /> -->
+<!-- 	</root> -->
+
+</log4j:configuration>

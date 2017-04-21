@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - share@localhost" uuid="6c0d0190-09cf-4e23-a23f-0eb401446a28">
+    <database-info product="MySQL" version="5.0.18-nt" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="share"/>
+    <table name="t_user" schema="" catalog="share" type="TABLE">
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="userName" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="userId"/>
+    </table>
+  </data-source>
+</component>
