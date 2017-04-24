@@ -13,16 +13,18 @@
 
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
-			<!-- <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-				<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
-			</bean> -->
 			<ref bean="stringHttpMessageConverter" />
 		</mvc:message-converters>
+		<mvc:argument-resolvers>
+			<!-- 增加对于pageable接口的支持 -->
+			<bean class="org.springframework.data.web.PageableHandlerMethodArgumentResolver" />
+		</mvc:argument-resolvers>
 	</mvc:annotation-driven>
+
 	<bean id="stringHttpMessageConverter"
 		class="org.springframework.http.converter.StringHttpMessageConverter">
-		<constructor-arg value="UTF-8" index="0"></constructor-arg><!-- 
-			避免出现乱码 -->
+		<constructor-arg value="UTF-8" index="0"></constructor-arg>
+		<!-- 避免出现乱码 -->
 		<property name="supportedMediaTypes">
 			<list>
 				<value>text/plain;charset=UTF-8</value>

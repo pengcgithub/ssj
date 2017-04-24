@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <name>ssj-parent</name>
-    <description>搭建一个简单的springmvc+JPAd的项目</description>
+    <description>搭建一个简单的springmvc+JPA的项目</description>
     <url>http://maven.apache.org</url>
     <inceptionYear>2017-04-13</inceptionYear>
 
@@ -527,6 +527,13 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-connector.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

@@ -4,6 +4,8 @@ import com.ssj.manage.biz.user.model.UserBean;
 import com.ssj.manage.biz.user.repositories.UserDao;
 import com.ssj.manage.biz.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -35,5 +37,22 @@ public class UserServiceImpl implements UserService {
     public UserBean findUser(String id) {
         UserBean userBean = userDao.queryById(id);
         return userBean;
+    }
+
+    @Override
+    public Page<UserBean> findUserByPage(UserBean userBean, Pageable pageable) {
+        return userDao.findUserByPage(userBean, pageable);
+    }
+
+    @Override
+    public boolean deleteUser(String id) {
+        boolean isDelete = true;
+        try {
+            userDao.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            isDelete = false;
+        }
+        return isDelete;
     }
 }
