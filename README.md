@@ -1,4 +1,4 @@
-#Spring + SpringMvc + JPA#
+#Spring + SpringMvc + JPA
 
 ## 简介 ##
 
@@ -25,6 +25,9 @@
 - Druid: 数据库连接池
 - Log4J: 日志管理
 - Swagger2: 接口测试框架
+- Lombok：利用注解，过滤掉多余的代码，例如get/set方法
 
 
-## 参与者 ##
+## 关于作者 ##
+
+- pengcheng3211@gmail.com

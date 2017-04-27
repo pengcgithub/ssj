@@ -6,11 +6,13 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
+	<!-- 注解扫描 Spring Bean -->
 	<context:component-scan base-package="com.ssj.manage.biz.**.controller">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
+	<!-- SpringMVC注解驱动 -->
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
 			<ref bean="stringHttpMessageConverter" />
@@ -21,6 +23,7 @@
 		</mvc:argument-resolvers>
 	</mvc:annotation-driven>
 
+	<!-- 设置编码格式 -->
 	<bean id="stringHttpMessageConverter"
 		class="org.springframework.http.converter.StringHttpMessageConverter">
 		<constructor-arg value="UTF-8" index="0"></constructor-arg>
@@ -38,8 +41,8 @@
 	<!--<mvc:view-controller path="/" view-name="redirect:/business/login.html" />-->
 	<mvc:view-controller path="/" view-name="redirect:/swagger/index.html" />
 
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- 视图解析器 常用的还有 VelocityViewResolver、FreeMarkerViewResolver -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="order" value="0"></property>
 		<property name="prefix" value="/WEB-INF/pages/"></property>
 		<property name="suffix" value=".html" />
